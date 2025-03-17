@@ -1,7 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
 import { PORT, mongoDBURL } from "./config.js";
+
+// Import Routes
 import userRoutes from "./Routes/userRoutes.js";
+import { Progress } from "./Models/progressmodel.js";
+
+
+
 
 const app = express();
 
