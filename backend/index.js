@@ -2,11 +2,9 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import { PORT, mongoDBURL } from "./config.js";
-import userRoutes from "./Routes/userRoutes.js";
-import workoutRoutes from "./Routes/workoutRoutes.js";
-import scheduleRoute from "./Routes/scheduleRoute.js";
 
-const app = express(); // Initialize Express app
+// Import Routes
+import userRoutes from "./Routes/userRoutes.js";
 
 // Middleware
 app.use(cors({
