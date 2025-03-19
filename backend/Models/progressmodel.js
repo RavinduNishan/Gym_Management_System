@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const progressSchema = new mongoose.Schema({
     userId: {
@@ -28,4 +28,5 @@ const progressSchema = new mongoose.Schema({
     timestamps: true
 });
 
-export const Progress = mongoose.model('Progress', {name: String});
+export const  Progress = mongoose.model('Progress', progressSchema);
+export default Progress; 
