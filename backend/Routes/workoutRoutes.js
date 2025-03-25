@@ -4,18 +4,18 @@ import { createWorkoutPlan, getAllWorkoutPlans, getWorkoutPlanById, updateWorkou
 const router = express.Router();
 
 // Create a new workout plan
-router.post("/workout", createWorkoutPlan);
+router.post("/", createWorkoutPlan);
 
 // Get all workout plans
-router.get("/workout", getAllWorkoutPlans);
+router.get("/", getAllWorkoutPlans);
 
 // Get a workout plan by ID
-router.get("/workout/:id", getWorkoutPlanById);
+router.get("/:id", getWorkoutPlanById);
 
 // Update a workout plan by ID
-router.put("/workout/:id", updateWorkoutPlan);
+router.put("/:id", updateWorkoutPlan);
 
 // Delete a workout plan by ID
-router.delete("/workout/:id", deleteWorkoutPlan);
+router.delete("/:id", deleteWorkoutPlan);
 
 export default router;

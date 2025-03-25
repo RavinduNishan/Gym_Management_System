@@ -13,7 +13,7 @@ app.use(express.json());
 app.use("/api/users", userRoutes);
 
 // Workout Plan Routes
-app.use("/api", workoutRoutes);
+app.use("/api/workout", workoutRoutes);
 
 // Default route
 app.get("/", (req, res) => {
