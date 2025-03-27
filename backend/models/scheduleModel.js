@@ -1,8 +1,10 @@
 import mongoose from 'mongoose';
 
+
+
 const ScheduleSchema = new mongoose.Schema(
     {
-        sessionID: { type: String, required: true, unique: true }, // Ensure sessionID is properly defined
+        sessionID: { type: String, required:true, unique: true }, // Ensure sessionID is properly defined
         sessionTitle: { type: String, required: true },
         description: { type: String },
         sessionType: {

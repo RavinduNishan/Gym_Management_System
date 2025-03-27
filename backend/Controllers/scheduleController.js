@@ -19,7 +19,10 @@ const getSchedule = async(req, res) => {
     try{
         const { id } = req.params;
         const schedule =await Schedule.findById(id);
+        if (!schedule) return res.status(404).json({ message: "Schedule not found" });
+
         res.status(200).json(schedule);
+        
     }catch(error){
         res.status(500).json({message: error.message});
     }
