@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false })); // Parse URL-encoded payloads
 // Routes
 app.use("/api/users", userRoutes); // User Routes
 app.use("/api/schedules", scheduleRoute); // Schedule Routes
-app.use("/api/workout", workoutRoutes); // Workout Routes
+app.use("/api/workout", workoutRoutes); // Workout Plan Routes
 
 // Default route
 app.get("/", (req, res) => {
