@@ -1,0 +1,86 @@
+/* General Form Container */
+.form-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title Styling */
+  .form-title {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Success/Error Message */
+  .form-message {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  .form-message.error {
+    color: red;
+  }
+  
+  /* Form Layout */
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Form Group Styling */
+  .form-group {
+    margin-bottom: 12px;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 60px;
+  }
+  
+  /* Error Text Styling */
+  .error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  
+  /* Submit Button Styling */
+  .form-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-button:hover {
+    background-color: #0056b3;
+  }

@@ -1,0 +1,32 @@
+/* src/Components/Pages/HomePage.css */
+
+.home-container {
+  background-color: #f9f9f9; /* Light background */
+  padding: 50px;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-section {
+  max-width: 50%;
+}
+
+.gym-image {
+  width: 100%; /* Adjust as needed */
+  max-width: 500px; /* Limit the image size */
+}
+/* src/Pages/HomePage.css */
+
+.home-description {
+  font-family: 'Poppins', sans-serif; /* Modern and clean font */
+  font-size: 1.2rem; /* Slightly larger for readability */
+  line-height: 1.6; /* Proper spacing between lines */
+  color: #333; /* Dark gray for professionalism */
+  margin-top: 20px; /* Space above the paragraph */
+  text-align: center; /* Center-align for balance */
+}
+
