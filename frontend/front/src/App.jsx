@@ -9,11 +9,13 @@ function App() {
     <div className="app-container">
       {/* Header */}
       <Header />
+      
       {/* Main Content */}
       <main className="main-content">
-        <h1>Welcome to the Gym Management System</h1>
-        <p>Manage your gym schedules efficiently with our system.</p>
+        <h1 style={{ color: "#FFA500" }}>Welcome to the Gym Management System</h1>
+        <p>Manage your gym schedules and workout plans efficiently with our system.</p>
       </main>
+      
       {/* Footer */}
       <Footer />
     </div>

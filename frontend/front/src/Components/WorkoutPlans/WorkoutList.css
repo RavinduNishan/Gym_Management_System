@@ -1,0 +1,46 @@
+/* WorkoutList.css */
+.workout-list-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .workout-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .workout-table th,
+  .workout-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+  }
+  
+  .workout-table th {
+    background-color: #333;
+  }
+  
+  .btn-update {
+    background-color: #9ACD32;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .btn-delete {
+    background-color: #FFA500;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }

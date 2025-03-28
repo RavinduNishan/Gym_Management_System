@@ -18,13 +18,7 @@ const Header = () => {
               <Link to="/schedules">Schedules</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
-            </li>
-            <li>
-              <Link to="/progress">Progress</Link>
-            </li>
-            <li>
-            <Link to="/workouts">Workouts</Link>
+              <Link to="/workouts">Workouts</Link>
             </li>
           </ul>
         </nav>
