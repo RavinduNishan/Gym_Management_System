@@ -1,6 +1,8 @@
+// src/Components/Schedule/ScheduleTable.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./ScheduleTable.css"; // Import CSS for styling
+import { Link } from "react-router-dom"; // Import Link component
 
 const ScheduleTable = () => {
   const [schedules, setSchedules] = useState([]);
@@ -47,7 +49,7 @@ const ScheduleTable = () => {
 
   return (
     <div className="schedule-table-container">
-      <h2>FitPro Gym Schedule List</h2>
+      <h2>FitPro Schedules List</h2>
       <table className="schedule-table">
         <thead>
           <tr>
@@ -76,7 +78,9 @@ const ScheduleTable = () => {
               <td>{schedule.memberName}</td>
               <td>{schedule.status}</td>
               <td>
-                <button className="btn-update">Update</button>
+                <Link to={`/update-schedule/${schedule._id}`}>
+                  <button className="btn-update">Update</button>
+                </Link>
                 <button
                   className="btn-delete"
                   onClick={() => handleDelete(schedule._id)}

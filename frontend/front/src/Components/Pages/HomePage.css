@@ -1,25 +1,47 @@
-/* src/Components/Pages/HomePage.css */
+/* Ensure full height and proper spacing */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Full height of the viewport */
+}
+
+.home-page {
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Ensure the container occupies the full viewport height */
+}
 
 .home-container {
+  flex-grow: 1; /* Allow main content to expand and push footer down */
   background-color: #f9f9f9; /* Light background */
-  padding: 50px;
+  padding: 50px 20px; /* Padding for spacing */
 }
 
 .content-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Space between text and image */
+  align-items: center; /* Align items vertically */
+  max-width: 1200px; /* Limit width for larger screens */
+  margin: 0 auto; /* Center the container */
 }
 
 .text-section {
-  max-width: 50%;
+  max-width: 50%; /* Take up half the width */
+  text-align: center; /* Center-align all text */
 }
 
-.gym-image {
-  width: 100%; /* Adjust as needed */
-  max-width: 500px; /* Limit the image size */
+.welcome-title,
+.gym-system-title {
+  font-family: 'Poppins', sans-serif; /* Modern and clean font */
+  font-size: 2rem; /* Larger font size for titles */
+  color: #333; /* Dark gray for professionalism */
+  margin: 0; /* Remove default margins */
+  font-weight: bold; /* Make the text bold */
 }
-/* src/Pages/HomePage.css */
+
+.welcome-title {
+  margin-bottom: 10px; /* Add spacing between titles */
+}
 
 .home-description {
   font-family: 'Poppins', sans-serif; /* Modern and clean font */
@@ -30,3 +52,14 @@
   text-align: center; /* Center-align for balance */
 }
 
+.image-section {
+  max-width: 50%; /* Take up half the width */
+}
+
+.gym-image {
+  width: 100%; /* Make the image responsive */
+  max-width: 500px; /* Limit the maximum size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Add rounded corners for aesthetics */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}

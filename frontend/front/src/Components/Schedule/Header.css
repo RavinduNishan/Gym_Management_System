@@ -24,7 +24,7 @@
 }
 
 .logo {
-  height: 40px;
+  height: 60px;
 }
 
 .nav {
@@ -35,7 +35,7 @@
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px; /* Evenly space the navigation links */
+  gap: 180px; /* Evenly space the navigation links */
   margin: 0;
   padding: 0;
 }
@@ -44,6 +44,7 @@
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-size: 15px;
 }
 
 .nav-links li a:hover {
