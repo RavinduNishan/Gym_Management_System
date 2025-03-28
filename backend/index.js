@@ -5,12 +5,11 @@ import { PORT, mongoDBURL } from "./config.js";
 
 // Import Routes
 import userRoutes from "./Routes/userRoutes.js";
-import scheduleRoute from "./Routes/scheduleRoute.js"; // Added missing import
-import workoutRoutes from "./Routes/workoutRoutes.js"; // Added missing import
-
+import scheduleRoute from "./Routes/scheduleRoute.js";
+import workoutRoutes from "./Routes/workoutRoutes.js";
 import Progress from "./Models/progressmodel.js";
 
-const app = express(); // Moved app initialization here
+const app = express();
 
 // Middleware
 app.use(cors({
