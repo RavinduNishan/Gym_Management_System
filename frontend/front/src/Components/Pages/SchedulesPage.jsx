@@ -11,15 +11,16 @@ import "./SchedulesPage.css"; // Correct path
 
 const SchedulesPage = () => {
   return (
-    <div className="schedules-page">
+    
+    <div className="home-page">
         <Header />
-        <div>
+        <main>
           <ScheduleTable />
       <Link to="/form-page">
         <button className="btn-create">Create Schedule</button>
       </Link>
       
-    </div>
+    </main>
     <Footer />
     </div>
   );

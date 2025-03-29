@@ -1,26 +1,35 @@
-.schedules-page {
-    padding: 20px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #2c3e50;
-  }
-  
-  .btn-create {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .btn-create:hover {
-    background-color: #2980b9;
-  }
+/* src/Components/Pages/SchedulesPage.css */
+
+.home-page {
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh; /* Ensure the container occupies the full viewport height */
+}
+
+main {
+  flex-grow: 1; /* Allow main content to expand and push footer down */
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.btn-create {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-create:hover {
+  background-color: #2980b9;
+}

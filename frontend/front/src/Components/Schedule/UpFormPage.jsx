@@ -1,19 +1,18 @@
-// src/Components/Schedule/FormPage.jsx
+// src/Components/Schedule/UpFormPage.jsx
 import React from "react";
 import Header from "./Header"; // Import the Header component
 import Footer from "./Footer"; // Import the Footer component
-import CreateSchedule from "./CreateSchedule"; // Import the CreateSchedule component
-import "./CreateSchedule.css";
-import"../Pages/HomePage.css"
-const FormPage = () => {
+import UpdateSchedule from "./UpdateSchedule"; // Import the UpdateSchedule form
+
+const UpFormPage = () => {
   return (
-    <div className="home-page">
+    <div>
       {/* Header */}
       <Header />
       {/* Main Content */}
       <main style={{ minHeight: "80vh", padding: "20px" }}>
-    
-        <CreateSchedule />
+        <h1>Update Schedule</h1>
+        <UpdateSchedule />
       </main>
       {/* Footer */}
       <Footer />
@@ -21,4 +20,4 @@ const FormPage = () => {
   );
 };
 
-export default FormPage;
+export default UpFormPage;

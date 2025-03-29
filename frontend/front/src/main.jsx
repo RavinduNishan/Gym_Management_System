@@ -8,9 +8,10 @@ import "bootstrap/dist/css/bootstrap.min.css";  // Import Bootstrap CSS
 
 // Import components
 import App from "./App";
-import HomePage from "./Components/Pages/HomePage";
-import SchedulesPage from "./Components/Pages/SchedulesPage";
-import FormPage from "./Components/Schedule/FormPage";
+import HomePage from "./Components/Pages/HomePage"; // Correct path
+import SchedulesPage from "./Components/Pages/SchedulesPage"; // Correct path
+import FormPage from "./Components/Schedule/FormPage"; 
+import UpFormPage from "./Components/Schedule/UpFormPage";
 import SignupForm from "./Components/Pages/Users/SignupForm"; // Import the SignupForm component
 import LoginForm from "./Components/Pages/Users/LoginForm"; // Import the LoginForm component
 import UsersDashboard from "./Components/Pages/Users/UsersDashboard"; // Import the UsersDashboard component
@@ -31,6 +32,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         
         {/* Create Schedule Form */}
         <Route path="/form-page" element={<FormPage />} />
+        
+        {/* Update Schedule Form */}
+        <Route path="/update-schedule/:id" element={<UpFormPage />} />
         
         {/* Workout List Page */}
         <Route path="/workouts" element={<WorkoutListPage />} />
