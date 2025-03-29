@@ -20,14 +20,19 @@ html, body {
   flex-grow: 1; /* Allow main content to expand and push footer down */
   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
   padding: 50px 20px; /* Padding for spacing */
+  min-height: 100vh; /* Ensure the container takes at least the height of the screen */
+  display: flex;
+  flex-direction: column; /* Column layout to position footer at the bottom */
 }
 
+/* Ensure content section takes available space */
 .content-container {
   display: flex;
   justify-content: space-between; /* Space between text and image */
   align-items: center; /* Align items vertically */
   max-width: 1200px; /* Limit width for larger screens */
   margin: 0 auto; /* Center the container */
+  flex: 1; /* This will push the footer to the bottom if the content is less than the screen height */
 }
 
 .text-section {
@@ -48,6 +53,7 @@ html, body {
   margin-bottom: 10px; /* Add spacing between titles */
 }
 
+/* src/Pages/HomePage.css */
 .home-description {
   font-family: 'Poppins', sans-serif; /* Modern and clean font */
   font-size: 1.2rem; /* Slightly larger for readability */
@@ -67,4 +73,15 @@ html, body {
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px; /* Add rounded corners for aesthetics */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Footer style */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
