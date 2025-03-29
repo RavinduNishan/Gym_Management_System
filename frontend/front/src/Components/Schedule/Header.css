@@ -35,7 +35,7 @@
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 180px; /* Evenly space the navigation links */
+  gap: 100px; /* Evenly space the navigation links */
   margin: 0;
   padding: 0;
 }

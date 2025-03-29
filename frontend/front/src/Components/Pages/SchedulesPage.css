@@ -1,35 +1,54 @@
-/* src/Components/Pages/SchedulesPage.css */
-
-.home-page {
-  display: flex; /* Use Flexbox for layout */
-  flex-direction: column; /* Stack children vertically */
-  min-height: 100vh; /* Ensure the container occupies the full viewport height */
-}
-
-main {
-  flex-grow: 1; /* Allow main content to expand and push footer down */
+/* Ensure Form Container has a solid background */
+.form-container {
+  max-width: 1000px;
+  margin: auto;
   padding: 20px;
+  background-color: #ffffff !important; /* Enforce white background */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #2c3e50;
+/* Ensure Text Colors are Visible */
+.form-title,
+label {
+  color: #000000 !important; /* Ensure text is black */
 }
 
-.btn-create {
-  background-color: #3498db;
+/* Form Fields */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #000000 !important; /* Ensure text inside fields is visible */
+  background-color: #ffffff !important; /* Ensure input fields have a white background */
+}
+
+/* Submit Button */
+.form-button {
+  background-color: #007bff;
   color: white;
+  padding: 10px;
   border: none;
-  padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-.btn-create:hover {
-  background-color: #2980b9;
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+/* Fix for Background Override Issue */
+.home-page {
+  background: none !important; /* Remove unwanted background */
+  background-color: #f4f4f4 !important; /* Set a light background */
 }
