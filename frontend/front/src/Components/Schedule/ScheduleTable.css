@@ -9,9 +9,9 @@
   
   h2 {
     text-align: center;
-    font-style: bold !important;
+    font-weight: bold !important;
     margin-bottom: 20px;
-    color: #333 !important;
+    color: #800000 !important;
   }
   
   .schedule-table {
