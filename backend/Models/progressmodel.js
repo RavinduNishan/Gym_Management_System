@@ -17,16 +17,19 @@ const progressSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-
+    time: {
+        type: Number,
+        required: true,
+        description: "Time spent in minutes"
+    },
     createdAt: {
         type: Date,
         default: Date.now
     }
-
 },
 {
     timestamps: true
 });
 
-export const  Progress = mongoose.model('Progress', progressSchema);
-export default Progress; 
+export const Progress = mongoose.model('Progress', progressSchema);
+export default Progress;
