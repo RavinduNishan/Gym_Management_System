@@ -13,7 +13,7 @@
     text-align: center;
     font-size: 22px;
     margin-bottom: 15px;
-    color: #333;
+    color: #800000 !important;
   }
   
   /* Success/Error Message */
@@ -84,3 +84,6 @@
   .form-button:hover {
     background-color: #0056b3;
   }
+
+ 
+  
