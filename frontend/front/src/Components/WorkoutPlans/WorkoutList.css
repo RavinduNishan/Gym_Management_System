@@ -1,4 +1,4 @@
-/* WorkoutList.css */
+/* src/Components/WorkoutPlans/WorkoutList.css */
 .workout-list-container {
     max-width: 800px;
     margin: 20px auto;
@@ -9,38 +9,71 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   
-  .workout-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  .workout-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
   
-  .workout-table th,
-  .workout-table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #444;
-  }
-  
-  .workout-table th {
+  .workout-card {
+    flex: 1 1 calc(33.333% - 40px); /* Responsive layout for cards */
     background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .workout-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-beginner {
+    background-color: #02893f; /* Yellow-green for Beginner */
+  }
+  
+  .card-medium {
+    background-color: #011ca3; /* Green for Intermediate */
+  }
+  
+  .card-advanced {
+    background-color: #740202; /* Red for Advanced */
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
   }
   
   .btn-update {
-    background-color: #9ACD32;
+    background-color: #32cd35;
     color: white;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 5px;
   }
   
   .btn-delete {
-    background-color: #FFA500;
+    background-color: #f30a0a;
     color: white;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .workout-card {
+      flex: 1 1 calc(50% - 40px); /* Two cards per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .workout-card {
+      flex: 1 1 100%; /* One card per row on very small screens */
+    }
   }
