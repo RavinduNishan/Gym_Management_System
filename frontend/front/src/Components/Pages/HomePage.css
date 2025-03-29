@@ -1,4 +1,5 @@
-/* Ensure full height and proper spacing */
+/* src/Components/Pages/HomePage.css */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -9,11 +10,15 @@ html, body {
   display: flex; /* Use Flexbox for layout */
   flex-direction: column; /* Stack children vertically */
   min-height: 100vh; /* Ensure the container occupies the full viewport height */
+  background-image: url("../../assets/background.jpg"); /* Set background image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repetition */
 }
 
 .home-container {
   flex-grow: 1; /* Allow main content to expand and push footer down */
-  background-color: #f9f9f9; /* Light background */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
   padding: 50px 20px; /* Padding for spacing */
 }
 
@@ -34,7 +39,7 @@ html, body {
 .gym-system-title {
   font-family: 'Poppins', sans-serif; /* Modern and clean font */
   font-size: 2rem; /* Larger font size for titles */
-  color: #333; /* Dark gray for professionalism */
+  color: #140574e0; /* Dark gray for professionalism */
   margin: 0; /* Remove default margins */
   font-weight: bold; /* Make the text bold */
 }
@@ -47,7 +52,7 @@ html, body {
   font-family: 'Poppins', sans-serif; /* Modern and clean font */
   font-size: 1.2rem; /* Slightly larger for readability */
   line-height: 1.6; /* Proper spacing between lines */
-  color: #333; /* Dark gray for professionalism */
+  color: #100362fc; /* Dark gray for professionalism */
   margin-top: 20px; /* Space above the paragraph */
   text-align: center; /* Center-align for balance */
 }
