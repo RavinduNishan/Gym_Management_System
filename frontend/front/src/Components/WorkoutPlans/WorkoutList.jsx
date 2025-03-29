@@ -1,12 +1,15 @@
 // src/Components/WorkoutPlans/WorkoutList.jsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import WorkoutForm from "./WorkoutForm"; // Import the WorkoutForm component
 import "./WorkoutList.css"; // Import CSS for styling
 
 const WorkoutList = () => {
   const [workoutPlans, setWorkoutPlans] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [showForm, setShowForm] = useState(false); // State to toggle the form
+  const [selectedPlan, setSelectedPlan] = useState(null); // State to track selected plan for editing
 
   // Fetch all workout plans from the backend
   const fetchWorkoutPlans = async () => {
@@ -18,6 +21,25 @@ const WorkoutList = () => {
       console.error("Error fetching workout plans:", err);
       setError("Failed to load workout plans.");
       setLoading(false);
+    }
+  };
+
+  // Add or update a workout plan
+  const handleFormSubmit = async (newPlan) => {
+    try {
+      if (selectedPlan) {
+        // Update existing workout plan
+        await axios.put(`http://localhost:3000/api/workout/${selectedPlan._id}`, newPlan);
+      } else {
+        // Create a new workout plan
+        await axios.post("http://localhost:3000/api/workout", newPlan);
+      }
+      fetchWorkoutPlans(); // Refresh the list after adding/updating
+      setShowForm(false);
+      setSelectedPlan(null); // Reset selected plan
+    } catch (err) {
+      console.error("Error submitting workout plan:", err);
+      alert("Failed to submit workout plan.");
     }
   };
 
@@ -34,6 +56,18 @@ const WorkoutList = () => {
     }
   };
 
+  // Navigate to the form for updating a workout plan
+  const handleUpdate = async (id) => {
+    try {
+      const response = await axios.get(`http://localhost:3000/api/workout/${id}`);
+      setSelectedPlan(response.data); // Set the selected plan for editing
+      setShowForm(true); // Show the form
+    } catch (err) {
+      console.error("Error fetching workout plan details:", err);
+      alert("Failed to load workout plan details.");
+    }
+  };
+
   // Fetch workout plans on component mount
   useEffect(() => {
     fetchWorkoutPlans();
@@ -45,9 +79,8 @@ const WorkoutList = () => {
 
   return (
     <div className="workout-list-container">
-      {/* Heading in White Color */}
-      <h2 style={{ color: "white" }}>Workout Plans List</h2>
-      
+      <h2>Workout Plans List</h2>
+
       {/* Add New Workout Plan Button */}
       <button
         style={{
@@ -59,10 +92,21 @@ const WorkoutList = () => {
           cursor: "pointer",
           marginBottom: "20px",
         }}
-        onClick={() => window.location.href = "/workouts/form"}
+        onClick={() => {
+          setSelectedPlan(null); // Reset selected plan
+          setShowForm(!showForm); // Toggle the form visibility
+        }}
       >
-        Add New Workout Plan
+        {showForm ? "Hide Form" : "Add New Workout Plan"}
       </button>
+
+      {/* Display Workout Form */}
+      {showForm && (
+        <WorkoutForm
+          onSubmit={handleFormSubmit}
+          initialData={selectedPlan} // Pass the selected plan data for editing
+        />
+      )}
 
       {/* Display Workout Plans as Cards */}
       {workoutPlans.length === 0 ? (
@@ -91,7 +135,7 @@ const WorkoutList = () => {
               <div className="card-actions">
                 <button
                   className="btn-update"
-                  onClick={() => window.location.href = `/workouts/form/${plan._id}`}
+                  onClick={() => handleUpdate(plan._id)} // Handle update
                 >
                   Update
                 </button>

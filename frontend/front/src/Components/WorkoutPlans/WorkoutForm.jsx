@@ -1,28 +1,36 @@
-import React, { useState } from "react";
+// src/Components/WorkoutPlans/WorkoutForm.jsx
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./WorkoutForm.css"; // Import CSS for styling
 
-const WorkoutForm = ({ onSubmit }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    fitnessGoal: "",
-    level: "",
-    duration: "",
-    frequency: "",
-    assignedTrainer: "",
-    exercises: [{ exerciseName: "", sets: "", restTime: "" }],
-  });
+const WorkoutForm = ({ onSubmit, initialData }) => {
+  const [formData, setFormData] = useState(
+    initialData || {
+      name: "",
+      fitnessGoal: "",
+      level: "",
+      duration: "",
+      frequency: "",
+      assignedTrainer: "",
+      exercises: [{ exerciseName: "", sets: "", restTime: "" }],
+    }
+  );
 
   const [errors, setErrors] = useState({}); // State to manage validation errors
 
-  // Handle changes in form fields
+  // Reset form data if initialData changes
+  useEffect(() => {
+    if (initialData) {
+      setFormData(initialData);
+    }
+  }, [initialData]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     validateField(name, value); // Validate the field on change
   };
 
-  // Handle changes in exercise fields
   const handleExerciseChange = (index, field, value) => {
     const updatedExercises = [...formData.exercises];
     updatedExercises[index][field] = value;
@@ -30,7 +38,6 @@ const WorkoutForm = ({ onSubmit }) => {
     validateExerciseField(index, field, value); // Validate the exercise field
   };
 
-  // Add a new exercise field dynamically
   const addExerciseField = () => {
     setFormData({
       ...formData,
@@ -38,7 +45,6 @@ const WorkoutForm = ({ onSubmit }) => {
     });
   };
 
-  // Validate individual fields
   const validateField = (name, value) => {
     let newErrors = { ...errors };
     switch (name) {
@@ -47,40 +53,33 @@ const WorkoutForm = ({ onSubmit }) => {
         else if (value.length < 3) newErrors[name] = "Name must be at least 3 characters.";
         else delete newErrors[name];
         break;
-
       case "fitnessGoal":
         if (!value) newErrors[name] = "Fitness goal is required.";
         else delete newErrors[name];
         break;
-
       case "level":
         if (!value) newErrors[name] = "Level is required.";
         else delete newErrors[name];
         break;
-
       case "duration":
         if (!value) newErrors[name] = "Duration is required.";
         else if (isNaN(value) || value <= 0) newErrors[name] = "Duration must be a positive number.";
         else delete newErrors[name];
         break;
-
       case "frequency":
         if (!value) newErrors[name] = "Frequency is required.";
         else delete newErrors[name];
         break;
-
       case "assignedTrainer":
         if (!value) newErrors[name] = "Assigned trainer is required.";
         else delete newErrors[name];
         break;
-
       default:
         break;
     }
     setErrors(newErrors);
   };
 
-  // Validate exercise fields
   const validateExerciseField = (index, field, value) => {
     let newErrors = { ...errors };
     if (!value) {
@@ -93,7 +92,6 @@ const WorkoutForm = ({ onSubmit }) => {
     setErrors(newErrors);
   };
 
-  // Form submission handler
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -165,18 +163,23 @@ const WorkoutForm = ({ onSubmit }) => {
 
     try {
       console.log("Submitting form data:", formData); // Debugging log
-      await onSubmit(formData); // Call the onSubmit prop
-      setFormData({
-        name: "",
-        fitnessGoal: "",
-        level: "",
-        duration: "",
-        frequency: "",
-        assignedTrainer: "",
-        exercises: [{ exerciseName: "", sets: "", restTime: "" }],
-      });
-      setErrors({}); // Clear errors after successful submission
-      alert("✅ Workout plan created successfully!");
+      if (typeof onSubmit === "function") {
+        await onSubmit(formData); // Call the onSubmit prop
+        setFormData({
+          name: "",
+          fitnessGoal: "",
+          level: "",
+          duration: "",
+          frequency: "",
+          assignedTrainer: "",
+          exercises: [{ exerciseName: "", sets: "", restTime: "" }],
+        });
+        setErrors({}); // Clear errors after successful submission
+        alert("✅ Workout plan created/updated successfully!");
+      } else {
+        console.error("onSubmit is not a function");
+        alert("❌ Error: onSubmit is not a function");
+      }
     } catch (error) {
       console.error("Error details:", error); // Log full error for debugging
       alert("❌ Error: " + (error.response?.data?.message || error.message || "Unknown error"));
@@ -185,8 +188,7 @@ const WorkoutForm = ({ onSubmit }) => {
 
   return (
     <div className="form-container">
-      <h2 className="form-title">Create Workout Plan</h2>
-
+      <h2 className="form-title">Create/Edit Workout Plan</h2>
       {/* Display form-wide errors */}
       {Object.values(errors).length > 0 && (
         <div className="error-text">
@@ -198,7 +200,6 @@ const WorkoutForm = ({ onSubmit }) => {
           </ul>
         </div>
       )}
-
       <form onSubmit={handleSubmit} className="form">
         {/* Name */}
         <div className="form-group">

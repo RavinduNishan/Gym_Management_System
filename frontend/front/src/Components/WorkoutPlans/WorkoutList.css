@@ -3,10 +3,16 @@
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #222;
-    color: white;
+    background-color: #313131; /* Dark gray background */
+    color: rgb(253, 253, 253); /* White text */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    color: white; /* Ensure the heading is white */
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 20px;
   }
   
   .workout-cards-container {
@@ -17,7 +23,7 @@
   
   .workout-card {
     flex: 1 1 calc(33.333% - 40px); /* Responsive layout for cards */
-    background-color: #333;
+    background-color: #333; /* Slightly lighter gray for cards */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -30,15 +36,15 @@
   }
   
   .card-beginner {
-    background-color: #02893f; /* Yellow-green for Beginner */
+    background-color: #02893f; 
   }
   
   .card-medium {
-    background-color: #011ca3; /* Green for Intermediate */
+    background-color: #011ca3; 
   }
   
   .card-advanced {
-    background-color: #740202; /* Red for Advanced */
+    background-color: #740202; 
   }
   
   .card-actions {
@@ -48,7 +54,7 @@
   }
   
   .btn-update {
-    background-color: #32cd35;
+    background-color: #32cd35; /* Bright green for Update button */
     color: white;
     padding: 5px 10px;
     border: none;
@@ -57,7 +63,7 @@
   }
   
   .btn-delete {
-    background-color: #f30a0a;
+    background-color: #f30a0a; /* Bright red for Delete button */
     color: white;
     padding: 5px 10px;
     border: none;
