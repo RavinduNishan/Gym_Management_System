@@ -1,5 +1,6 @@
 /* src/App.css */
 /* src/App.css */
+@import "tailwindcss";
 
 /* Reset default browser styles */
 html, body {
