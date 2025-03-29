@@ -1,5 +1,3 @@
-/* src/Components/Pages/HomePage.css */
-
 html, body {
   margin: 0;
   padding: 0;
@@ -53,7 +51,6 @@ html, body {
   margin-bottom: 10px; /* Add spacing between titles */
 }
 
-/* src/Pages/HomePage.css */
 .home-description {
   font-family: 'Poppins', sans-serif; /* Modern and clean font */
   font-size: 1.2rem; /* Slightly larger for readability */
