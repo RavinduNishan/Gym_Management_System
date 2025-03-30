@@ -2,9 +2,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css"; // Import the CSS file
-import Header from "./Components/Schedule/Header"; // Correct path
-import Footer from "./Components/Schedule/Footer"; // Correct path
-
+import Header from "./Components/Schedule/Header";
+import Footer from "./Components/Schedule/Footer";
+//import WorkoutForm from "./Components/Workout/WorkoutForm"; // Ensure the path is correct
+//import WorkoutList from "./Components/Workout/WorkoutList"; // Ensure the path is correct
 
 function App() {
   const [workoutPlans, setWorkoutPlans] = useState([]);

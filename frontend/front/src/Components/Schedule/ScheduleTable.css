@@ -1,5 +1,5 @@
 .schedule-table-container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 20px auto;
     padding: 20px;
     background-color: #f9f9f9;
@@ -9,8 +9,9 @@
   
   h2 {
     text-align: center;
+    font-style: bold !important;
     margin-bottom: 20px;
-    color: #333;
+    color: #333 !important;
   }
   
   .schedule-table {
