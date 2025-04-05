@@ -66,7 +66,7 @@ header {
 
 /* Submit button styling */
 .signup-form input[type="submit"] {
-  background-color: #007bff; /* Blue background */
+  background-color: #007bff !important; /* Blue background */
   color: white;
   cursor: pointer;
   text-align: center;

@@ -11,7 +11,7 @@ const UpFormPage = () => {
       <Header />
       {/* Main Content */}
       <main style={{ minHeight: "80vh", padding: "20px" }}>
-        <h1>Update Schedule</h1>
+        
         <UpdateSchedule />
       </main>
       {/* Footer */}
