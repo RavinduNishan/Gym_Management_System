@@ -6,7 +6,7 @@ import userRoutes from "./Routes/userRoutes.js";
 import scheduleRoute from "./Routes/scheduleRoute.js";
 import workoutRoutes from "./Routes/workoutRoutes.js"; // Import workout routes
 
-const app = express(); // Initialize Express app
+const app = express();
 
 // Middleware to enable CORS (Cross-Origin Resource Sharing)
 app.use(cors({
@@ -24,13 +24,12 @@ app.use("/api/workout", workoutRoutes); // Workout Plan Routes
 
 // Default route
 app.get("/", (req, res) => {
-    res.status(200).send("Welcome to the User, Schedule, and Workout Plan Management API!");
+    res.status(200).send("Welcome to the Gym Management API!");
 });
 
 // Connect to MongoDB and Start Server
-mongoose
-    .connect(mongoDBURL)
+mongoose.connect(mongoDBURL)
     .then(() => {
         app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
     })
-    .catch((err) => console.error("MongoDB Connection Failed:", err));
+    .catch(err => console.error("MongoDB Connection Failed:", err));
