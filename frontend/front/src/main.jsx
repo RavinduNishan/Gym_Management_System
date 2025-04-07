@@ -11,6 +11,9 @@ import App from "./App";
 import HomePage from "./Components/Pages/HomePage"; // Correct path
 import SchedulesPage from "./Components/Pages/SchedulesPage"; // Correct path
 import FormPage from "./Components/Schedule/FormPage"; 
+import AddProgress from "./Components/Pages/AddProgress"; // Import AddProgress component
+import ManageProgress from "./Components/Pages/ManageProgress"; // Import ManageProgress component
+import EditProgress from "./Components/Pages/EditProgress"; // Import EditProgress component
 import UpFormPage from "./Components/Schedule/UpFormPage";
 import SignupForm from "./Components/Pages/Users/SignupForm"; // Import the SignupForm component
 import LoginForm from "./Components/Pages/Users/LoginForm"; // Import the LoginForm component
@@ -32,6 +35,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         
         {/* Create Schedule Form */}
         <Route path="/form-page" element={<FormPage />} />
+        {/* Progress Management */}
+        <Route path="/add-progress" element={<AddProgress />} />
+        <Route path="/manage-progress" element={<ManageProgress />} />
+        <Route path="/edit-progress/:id" element={<EditProgress />} />
+
         
         {/* Update Schedule Form */}
         <Route path="/update-schedule/:id" element={<UpFormPage />} />

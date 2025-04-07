@@ -1,4 +1,7 @@
 /* src/App.css */
+/* src/App.css */
+@import "tailwindcss";
+
 
 /* Ensure the app container takes up the full height of the viewport */
 html, body {
