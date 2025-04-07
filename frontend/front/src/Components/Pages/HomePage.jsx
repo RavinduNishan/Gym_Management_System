@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { FaDumbbell, FaHeartbeat, FaUsers, FaCalendarAlt, FaChartLine } from 'react-icons/fa';
 import { IoIosArrowForward } from 'react-icons/io';
@@ -308,8 +309,10 @@ function HomePage() {
 
       {/* Footer */}
       <Footer/>
+
     </div>
   )
 }
 
-export default HomePage
+
+export default HomePage;

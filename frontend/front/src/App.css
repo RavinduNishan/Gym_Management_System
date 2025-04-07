@@ -2,77 +2,29 @@
 /* src/App.css */
 @import "tailwindcss";
 
-/* Reset default browser styles */
+
+/* Ensure the app container takes up the full height of the viewport */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensure the body takes up the full viewport height */
+  height: 100%; /* Full height of the viewport */
 }
 
-/* Main container for the app */
 .app-container {
-  display: flex;
-  flex-direction: column;
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
   min-height: 100vh; /* Ensure the container occupies the full viewport height */
 }
 
-/* Main content area */
 .main-content {
   flex-grow: 1; /* Allow the main content to expand and push the footer down */
   padding: 20px; /* Add some padding for spacing */
+  text-align: center; /* Center-align text for better aesthetics */
 }
 
-/* Header styles */
-header.header {
-  background-color: #343a40; /* Dark gray background */
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header .logo {
-  height: 40px;
-}
-
-header .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  margin: 0;
-  padding: 0;
-}
-
-header .nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-header .nav-links li a:hover {
-  text-decoration: underline;
-}
-
-/* Footer styles */
 footer.footer {
-  background-color: #2c3e50; /* Dark blue background */
+  background-color: #800000; /* Dark red */
   color: white;
+  padding: 1.5rem 0;
   text-align: center;
-  padding: 10px 0;
-  margin-top: auto; /* Push the footer to the bottom */
-}
-
-footer .social-links {
-  margin-top: 10px;
-}
-
-footer .social-links a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-footer .social-links a:hover {
-  text-decoration: underline;
 }

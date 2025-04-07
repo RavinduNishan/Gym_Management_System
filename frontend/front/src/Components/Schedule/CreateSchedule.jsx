@@ -1,10 +1,8 @@
-// src/Components/Schedule/CreateSchedule.jsx
 import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./CreateSchedule.css"; // Correct path
-
 
 const CreateSchedule = () => {
   const {
@@ -13,8 +11,8 @@ const CreateSchedule = () => {
     reset,
     formState: { errors },
   } = useForm();
-
   const [message, setMessage] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const onSubmit = async (data) => {
     try {
@@ -22,7 +20,11 @@ const CreateSchedule = () => {
       const response = await axios.post("http://localhost:3000/api/schedules", data);
       console.log("Response:", response.data);
       setMessage("✅ Schedule created successfully!");
-      reset(); // Clear form after submission
+      
+      // Redirect to the /schedules page after 2 seconds
+      setTimeout(() => {
+        navigate("/schedules"); // Redirect to the schedules table
+      }, 2000);
     } catch (error) {
       console.error("Error details:", error); // Log full error for debugging
       setMessage(
@@ -34,8 +36,6 @@ const CreateSchedule = () => {
 
   return (
     <div className="form-container">
-     
-        
       <h2 className="form-title">Create Schedule</h2>
 
       {/* Display success/error message */}
@@ -183,7 +183,6 @@ const CreateSchedule = () => {
         </button>
       </form>
     </div>
-    
   );
 };
 
