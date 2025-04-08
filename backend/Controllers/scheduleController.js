@@ -75,4 +75,19 @@ const deleteSchedule = async(req, res) => {
     }
 }
 
-export { getSchedules, getSchedule, createSchedule, updateSchedule, deleteSchedule };
+//report generation
+const getScheduleBySessionID = async (req, res) => {
+    try {
+      const { sessionID } = req.params;
+      const schedule = await Schedule.findOne({ sessionID }); // Query by sessionID
+      if (!schedule) {
+        return res.status(404).json({ message: "Schedule not found" });
+      }
+      res.status(200).json(schedule);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };
+  
+
+export { getSchedules, getSchedule,getScheduleBySessionID, createSchedule, updateSchedule, deleteSchedule };

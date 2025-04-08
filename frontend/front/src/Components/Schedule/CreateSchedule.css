@@ -25,6 +25,7 @@ label {
   color: #333;
   font-weight: 600;
   margin-bottom: 5px;
+  display: block;
 }
 
 /* Form Fields */

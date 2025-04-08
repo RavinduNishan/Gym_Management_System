@@ -17,6 +17,7 @@ import LoginForm from "./Components/Pages/Users/LoginForm"; // Import the LoginF
 import UsersDashboard from "./Components/Pages/Users/UsersDashboard"; // Import the UsersDashboard component
 import WorkoutListPage from "./Components/WorkoutPlans/WorkoutList"; // Import Workout List Page
 import WorkoutFormPage from "./Components/WorkoutPlans/WorkoutForm"; // Import Workout Form Page
+import ReportPage from "./Components/Schedule/ReportPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -36,6 +37,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         {/* Update Schedule Form */}
         <Route path="/update-schedule/:id" element={<UpFormPage />} />
         
+        {/* Generate Report Form */}
+        <Route path="/generate-schedule-report" element={<ReportPage />} />
+
+
         {/* Workout List Page */}
         <Route path="/workouts" element={<WorkoutListPage />} />
         
