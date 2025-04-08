@@ -20,7 +20,7 @@ const CreateSchedule = () => {
       const response = await axios.post("http://localhost:3000/api/schedules", data);
       console.log("Response:", response.data);
       setMessage("✅ Schedule created successfully!");
-      
+
       // Redirect to the /schedules page after 2 seconds
       setTimeout(() => {
         navigate("/schedules"); // Redirect to the schedules table
