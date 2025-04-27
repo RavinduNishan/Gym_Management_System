@@ -36,6 +36,7 @@ public class LearningPlanController {
     }
 
     // Get all learning plans 
+    //retrieving data
     @GetMapping
     public ResponseEntity<List<LearningPlan>> getAllLearningPlans() {
         List<LearningPlan> allPlans = learningPlanRepository.findAll();
@@ -50,6 +51,7 @@ public class LearningPlanController {
     }
 
     // Get a specific plan by ID
+    //retrieving data using  id
     @GetMapping("/{planId}")
     public ResponseEntity<?> getPlanById(@PathVariable String planId) {
         Optional<LearningPlan> optionalPlan = learningPlanRepository.findById(planId);
@@ -57,6 +59,7 @@ public class LearningPlanController {
     }
 
     // Update a learning plan
+    //updating a plan using unique id
     @PutMapping("/{planId}")
     public ResponseEntity<?> updateLearningPlan(@PathVariable String planId, @RequestBody LearningPlan updatedPlan) {
         Optional<LearningPlan> optionalPlan = learningPlanRepository.findById(planId);
@@ -74,6 +77,7 @@ public class LearningPlanController {
     }
 
     // Delete a learning plan
+    //deleting the plans using id
     @DeleteMapping("/{planId}")
     public ResponseEntity<?> deleteLearningPlan(@PathVariable String planId) {
         if (!learningPlanRepository.existsById(planId)) {
@@ -83,7 +87,7 @@ public class LearningPlanController {
         learningPlanRepository.deleteById(planId);
         return ResponseEntity.ok(Map.of("message", "Learning plan deleted successfully"));
     }
-
+    //following plan code
     @PostMapping("/follow/{planId}")
     public ResponseEntity<?> followLearningPlan(@PathVariable String planId) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
