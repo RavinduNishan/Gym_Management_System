@@ -271,7 +271,7 @@ public class PostController {
                 }
             }
         }
-        
+        //Likes
         post.setLikes(likes);
         Post updatedPost = postRepository.save(post);
         
