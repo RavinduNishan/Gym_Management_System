@@ -1,4 +1,4 @@
-# ITPM-Gym_Management_System
+# Gym_Management_System
 
 A modern web application that facilitates knowledge exchange and learning in the developer community.
 
