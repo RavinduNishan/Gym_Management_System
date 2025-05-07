@@ -1,4 +1,4 @@
-# Gym_Management_System
+# Skill Sharing Platform
 
 A modern web application that facilitates knowledge exchange and learning in the developer community.
 
