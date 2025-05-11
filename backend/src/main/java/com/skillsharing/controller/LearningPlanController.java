@@ -36,7 +36,6 @@ public class LearningPlanController {
     }
 
     // Get all learning plans 
-    //retrieving data
     @GetMapping
     public ResponseEntity<List<LearningPlan>> getAllLearningPlans() {
         List<LearningPlan> allPlans = learningPlanRepository.findAll();
